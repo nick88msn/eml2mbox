@@ -7,4 +7,4 @@ Apple Mail, Thunderbird etc imports mailboxes rather than single email files. Th
 Single eml files are usually named after the original email subject. Content is usually not indexed and these files need to be opened one by one.
 
 ## Starting point (2021-05-26)
-Starting from a gist found on github (Kadin - kadin2048)[https://gist.github.com/kadin2048/c332a572a388acc22d56] I'll try to test if the script works, bring it to python3 and add more features.
+Starting from a gist found on github [Kadin - kadin2048](https://gist.github.com/kadin2048/c332a572a388acc22d56) I'll try to test if the script works, bring it to python3, refactor it and add more features.
