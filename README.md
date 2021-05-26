@@ -11,6 +11,8 @@ Starting from a gist found on github [Kadin - kadin2048](https://gist.github.com
 
 I'll try to test if the script works refactor it and add more features.
 
+If you want to know more about mailboxes in Python [Official Docs](https://docs.python.org/3/library/mailbox.html#mbox)
+
 ## Current usage
 The script accepts as an input either a single eml file or a directory.
 It then creates a new mbox folder or append to an existing one in the output path provided by the user.
