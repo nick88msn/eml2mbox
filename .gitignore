@@ -6,6 +6,12 @@ __pycache__/
 # C extensions
 *.so
 
+# Output files
+*.mbox
+
+# Input files
+*.eml
+
 # Distribution / packaging
 .Python
 build/

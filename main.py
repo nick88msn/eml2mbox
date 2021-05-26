@@ -1,11 +1,10 @@
-#!/usr/bin/env python3
-
 import os
 import sys
 import argparse
 from pathlib import Path
 import mailbox
 
+# Parse user arguments from cli
 def parse_args():
     parser = argparse.ArgumentParser(description='Converts single or multiple eml files into an mbox')
     parser.add_argument("input", type=str, help="Eml file or folder to be parsed", default=os.path.join(os.getcwd(),'input'))
@@ -13,11 +12,13 @@ def parse_args():
     args = parser.parse_args()
     return args
 
+# Check if path is abs or relative and return the absolute path
 def path_check(path):
     if not os.path.isabs(path):
         path = os.path.join(os.getcwd(),path)
     return path
 
+# Create an mbox, or append to an existing one, from a single eml file provided by the user
 def createMboxFromSingleEml(eml_file, output_path):
     # Here the default output name
     dest_name = 'output.mbox'
@@ -32,6 +33,25 @@ def createMboxFromSingleEml(eml_file, output_path):
             dest_mbox.close()
             raise
     dest_mbox.close()
+
+# Create an mbox, or append to an existing one, from a multiple eml files provided by the user
+def createMboxFromMultipleEmls(eml_path, output_path):
+    dest_name = 'output.mbox'
+    # Create a mbox folder if not present or reference to an existing one if provided
+    dest_mbox = mailbox.mbox(os.path.join(output_path,dest_name), create=True)
+    dest_mbox.lock()
+
+    for filename in os.listdir(eml_path):
+        if Path(os.path.join(eml_path,filename)).suffix == '.eml':
+            with open(os.path.join(eml_path,filename),'rb') as file:
+                try:
+                    dest_mbox.add(file)
+                except:
+                    dest_mbox.close()
+                    raise
+    dest_mbox.close()            
+
+
 
 def main():
     args = parse_args()
