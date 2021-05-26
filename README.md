@@ -10,3 +10,19 @@ Single eml files are usually named after the original email subject. Content is 
 Starting from a gist found on github [Kadin - kadin2048](https://gist.github.com/kadin2048/c332a572a388acc22d56).
 
 I'll try to test if the script works refactor it and add more features.
+
+## Current usage
+The script accepts as an input either a single eml file or a directory.
+It then creates a new mbox folder or append to an existing one in the output path provided by the user.
+Once you get your output mbox rename it as you prefer and import inside your preferite Email Client. 
+
+## Todos
+1. Ability to provide a folder with subfolders and get multiple mbox (e.g. inbox, sent, drafts)
+1. Ability to pass the output filename if provided or a default output.mbox in the script root folder if nothing is passed as second argument
+1. Add performance logging
+1. Add informational logging to be more user friendly
+
+## Playground 
+1. Web application using Django
+1 Desktop Application using some other framework
+1. Create an executable
