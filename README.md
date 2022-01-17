@@ -23,8 +23,3 @@ Once you get your output mbox rename it as you prefer and import inside your pre
 1. Ability to pass the output filename if provided or a default output.mbox in the script root folder if nothing is passed as second argument
 1. Add performance logging
 1. Add informational logging to be more user friendly
-
-## Playground 
-1. Web application using Django
-1 Desktop Application using some other framework
-1. Create an executable
